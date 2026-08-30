@@ -1,0 +1,1372 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="HuHoBotPenguin 说明文档 - 基于 PenguinClient 的增强分支">
+      
+      
+        <meta name="author" content="HuoHuas001">
+      
+      
+        <link rel="canonical" href="https://huhobot.txssb.cn/QuickStart/">
+      
+      
+        <link rel="prev" href="../command/">
+      
+      
+        <link rel="next" href="../Binding/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../img/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>快速开始 - HuHoBotPenguin Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#huhobotpenguin" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="HuHoBotPenguin Docs" class="md-header__button md-logo" aria-label="HuHoBotPenguin Docs" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HuHoBotPenguin Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              快速开始
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/HuHoBot/PenguinAgent" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    HuHoBotPenguin
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="HuHoBotPenguin Docs" class="md-nav__button md-logo" aria-label="HuHoBotPenguin Docs" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    HuHoBotPenguin Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/HuHoBot/PenguinAgent" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    HuHoBotPenguin
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../command/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    命令列表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    快速开始
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    快速开始
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置设置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bot 基础信息与群聊绑定
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        消息互通格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        玩家事件通知
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        绑定系统配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="绑定系统配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        白名单同步
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Agent 配置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motd-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MOTD API 与在线查询配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MOTD API 与在线查询配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motd-api_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MOTD API 启用配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        在线查询 Markdown 权限说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        管理员配置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自定义命令配置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        命令黑名单
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        命令开关
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        敏感词审核（可选）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WebUI 管理面板
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Binding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    绑定系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OnlineList/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    在线列表配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    适配器开发
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    适配器开发
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../develop/adapter-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    公共 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../develop/spigot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spigot/Paper
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../develop/nukkit-mot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nukkit-MOT (上游)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../develop/bungeecord/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BungeeCord (上游)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../develop/velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Velocity (上游)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../develop/allay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Allay (上游)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附属插件列表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sponsor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    赞助HuHoBot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置设置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bot 基础信息与群聊绑定
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        消息互通格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        玩家事件通知
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        绑定系统配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="绑定系统配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        白名单同步
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Agent 配置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motd-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MOTD API 与在线查询配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MOTD API 与在线查询配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motd-api_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MOTD API 启用配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        在线查询 Markdown 权限说明
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        管理员配置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自定义命令配置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        命令黑名单
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        命令开关
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        敏感词审核（可选）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WebUI 管理面板
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="huhobotpenguin">HuHoBotPenguin 部署与配置教程<a class="headerlink" href="#huhobotpenguin" title="Permanent link">&para;</a></h1>
+<p>在使用 HuHoBotPenguin 前，需要完成 QQ 开放平台机器人的创建与申请：</p>
+<ol>
+<li>访问 <a href="https://q.qq.com">QQ 开放平台官网</a></li>
+<li>登录并创建/申请一个机器人。</li>
+<li>在配置时，连接方式请选择 <strong>"其他方式连接"</strong>。</li>
+<li>记录 Bot 的 <code>app-id</code> 与 <code>secret</code> 密钥，供后续配置使用。</li>
+</ol>
+<h2 id="_1">配置设置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>打开插件的 <code>config.yml</code> 配置文件，按照如下结构配置 Bot 基础信息并绑定群聊。</p>
+<h3 id="bot">Bot 基础信息与群聊绑定<a class="headerlink" href="#bot" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">bot</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">app-id</span><span class="p">:</span><span class="w"> </span><span class="s">"_AppID"</span>
+<span class="w">  </span><span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="s">"Your_Secret"</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HuHoBot</span>
+<span class="w">  </span><span class="nt">groups</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"66535AF0D529..."</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"DFD5BB8CBA5C..."</span>
+</code></pre></div>
+<p><strong>配置要点说明：</strong></p>
+<ul>
+<li><strong>群号填写：</strong> 在群聊中发送 <code>/查信息</code> 获取当前群的 OpenId，并将获取到的群号依次填入 <code>groups</code> 表中。</li>
+<li><strong>群号规范：</strong> 填入 <code>groups</code> 列表中的群号时，务必加上双引号（例如：<code>"66535AF0D529..."</code>）。</li>
+<li><strong>隐藏日志：</strong> <code>suppress-console-output: true</code> 可屏蔽 QQ Bot SDK 的调试输出。</li>
+</ul>
+<h3 id="_2">消息互通格式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">chat-format</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">from-game</span><span class="p">:</span><span class="w"> </span><span class="s">"[游戏]</span><span class="nv"> </span><span class="s">{name}:</span><span class="nv"> </span><span class="s">{message}"</span>
+<span class="w">  </span><span class="nt">from-group</span><span class="p">:</span><span class="w"> </span><span class="s">"[QQ]</span><span class="nv"> </span><span class="s">{name}:</span><span class="nv"> </span><span class="s">{message}"</span>
+<span class="w">  </span><span class="nt">post-chat</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">start-with</span><span class="p">:</span><span class="w"> </span><span class="s">"#"</span>
+</code></pre></div>
+<ul>
+<li><code>from-game</code>：游戏消息转发到 QQ 群的格式</li>
+<li><code>from-group</code>：QQ 群消息转发到游戏的格式</li>
+<li><code>post-chat: true</code>：开启群→游戏转发</li>
+<li><code>start-with: "#"</code>：只有以 <code>#</code> 开头的游戏消息才转发到 QQ（留空表示全部转发）</li>
+</ul>
+<h3 id="_3">玩家事件通知<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">player-events</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">join</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="s">"[游戏]</span><span class="nv"> </span><span class="s">{name}</span><span class="nv"> </span><span class="s">加入了服务器"</span>
+<span class="w">  </span><span class="nt">quit</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="s">"[游戏]</span><span class="nv"> </span><span class="s">{name}</span><span class="nv"> </span><span class="s">离开了服务器"</span>
+</code></pre></div>
+<p>可用占位符：<code>{name}</code>、<code>{player}</code>、<code>{server}</code>、<code>{platform}</code></p>
+<h2 id="_4">绑定系统配置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>绑定系统允许 QQ 用户与 Minecraft 玩家名绑定，支持自动白名单同步。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">binding</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># 绑定时是否需要游戏内 /qqbind 验证；关闭时直接绑定无需游戏内操作</span>
+<span class="w">  </span><span class="nt">require-game-verification</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div>
+<ul>
+<li><code>require-game-verification: false</code>（默认）：直接绑定，自动添加白名单</li>
+<li><code>require-game-verification: true</code>：需要玩家进入服务器执行 <code>/qqbind &lt;验证码&gt;</code> 确认</li>
+</ul>
+<h3 id="_5">白名单同步<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">whitelist</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">add-command</span><span class="p">:</span><span class="w"> </span><span class="s">"whitelist</span><span class="nv"> </span><span class="s">add</span><span class="nv"> </span><span class="s">{name}"</span>
+<span class="w">  </span><span class="nt">del-command</span><span class="p">:</span><span class="w"> </span><span class="s">"whitelist</span><span class="nv"> </span><span class="s">remove</span><span class="nv"> </span><span class="s">{name}"</span>
+</code></pre></div>
+<p>绑定/解绑时自动执行白名单命令，<code>{name}</code> 会被替换为玩家名。</p>
+<h2 id="ai-agent">AI Agent 配置<a class="headerlink" href="#ai-agent" title="Permanent link">&para;</a></h2>
+<p>AI Agent 让管理员通过 QQ 群直接管理服务器（执行命令、查日志、管理插件等）。</p>
+<div class="admonition note">
+<p class="admonition-title">管理员权限</p>
+<p>所有 AI Agent 命令（<code>/agent</code>、<code>/newsession</code>、<code>/stop</code>）仅管理员可用。</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="nt">agent</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">base-url</span><span class="p">:</span><span class="w"> </span><span class="s">""</span>
+<span class="w">  </span><span class="nt">api-key</span><span class="p">:</span><span class="w"> </span><span class="s">""</span>
+<span class="w">  </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="s">"gpt-4o-mini"</span>
+<span class="w">  </span><span class="c1"># auto: 自动执行命令</span>
+<span class="w">  </span><span class="c1"># manual: 执行前需管理员审批（默认）</span>
+<span class="w">  </span><span class="nt">command-mode</span><span class="p">:</span><span class="w"> </span><span class="s">"manual"</span>
+</code></pre></div>
+<ul>
+<li><code>enabled</code>：启用 AI Agent 功能</li>
+<li><code>base-url</code>：OpenAI 兼容的 Chat Completions 接口地址</li>
+<li><code>api-key</code>：API 密钥</li>
+<li><code>model</code>：使用的模型名称</li>
+<li><code>command-mode</code>：<code>auto</code>（AI 直接执行）或 <code>manual</code>（管理员审批后执行）</li>
+</ul>
+<p>详细文档请查看 <a href="../Agent/">AI Agent</a>。</p>
+<h2 id="motd-api">MOTD API 与在线查询配置<a class="headerlink" href="#motd-api" title="Permanent link">&para;</a></h2>
+<h3 id="motd-api_1">MOTD API 启用配置<a class="headerlink" href="#motd-api_1" title="Permanent link">&para;</a></h3>
+<p>若要启用服务器状态及 MOTD 展示，需要在配置中定位到 <code>motd</code> 字段下的 <code>api</code> 项，并将其值换为标准 API 接口：</p>
+<div class="highlight"><pre><span></span><code><span class="nt">motd</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">server-ip</span><span class="p">:</span><span class="w"> </span><span class="s">"127.0.0.1"</span>
+<span class="w">  </span><span class="nt">server-port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">25565</span>
+<span class="w">  </span><span class="nt">api</span><span class="p">:</span><span class="w"> </span><span class="s">"http://motd.txssb.cn/api/app_img?ip={ip}&amp;port={port}&amp;dark=true&amp;lang=zh-CN"</span>
+<span class="w">  </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="s">"共{online}人在线"</span>
+<span class="w">  </span><span class="nt">post-img</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">use-markdown</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p><strong>参数与规则说明：</strong></p>
+<ul>
+<li><strong>保留占位符</strong>：URL 中的 <code>{ip}</code> 和 <code>{port}</code> 必须保持原样，<strong>不可变动</strong>。</li>
+<li><strong>主题配色调节：</strong></li>
+<li><code>dark</code>：深色模式</li>
+<li><code>dark=false</code>：浅色</li>
+</ul>
+<p><strong>详细文档与调试</strong>：参考<a href="https://motd.txssb.cn/docs">官方文档</a>，或使用其提供的在线测试器测试对应的 URL。</p>
+<ul>
+<li><strong>兼容性限制：</strong> 暂不支持 <strong>Simpfun (简幻欢)</strong> 节点的状态查询。</li>
+</ul>
+<h3 id="markdown">在线查询 Markdown 权限说明<a class="headerlink" href="#markdown" title="Permanent link">&para;</a></h3>
+<p>使用 <code>/查在线</code> 时，<code>use-markdown</code> 和 <code>post-img</code> 默认为 <code>true</code>（v1.3.0-beta.4+）。如需关闭可在配置中设为 <code>false</code>。</p>
+<h2 id="_6">管理员配置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nt">admin</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># qq: 仅群主/QQ 群管理员；config: 仅手动名单；both: 任一满足</span>
+<span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">both</span>
+<span class="w">  </span><span class="nt">openids</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</code></pre></div>
+<ul>
+<li><code>mode: qq</code>：仅 QQ 群主/管理员</li>
+<li><code>mode: config</code>：仅 <code>openids</code> 列表中的用户</li>
+<li><code>mode: both</code>：任一满足即可</li>
+</ul>
+<p>也可在群内使用 <code>/管理方式</code> 命令实时切换。</p>
+<h2 id="_7">自定义命令配置<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nt">custom-commands</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="s">"公告"</span>
+<span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="s">"say</span><span class="nv"> </span><span class="s">{params}"</span>
+<span class="w">    </span><span class="nt">permission</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">    </span><span class="nt">push-menu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<ul>
+<li><code>key</code>：命令关键词（<code>/执行 公告 ...</code>）</li>
+<li><code>command</code>：发送到服务器的实际命令，支持占位符</li>
+<li><code>permission</code>：0 = 所有人，1 = 仅管理员</li>
+<li><code>push-menu</code>：是否同步到 QQ 指令面板</li>
+</ul>
+<p>占位符详见 <a href="../command/#自定义命令">命令列表</a>。</p>
+<h2 id="_8">命令黑名单<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>禁止通过 <code>/执行</code> 或 Agent <code>run_command</code> 工具运行指定的服务器命令：</p>
+<div class="highlight"><pre><span></span><code><span class="nt">command-blacklist</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"op"</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"deop"</span>
+</code></pre></div>
+<ul>
+<li>匹配命令的第一个词（如填 <code>op</code> 则禁止 <code>/执行 op someone</code>）</li>
+<li>不区分大小写</li>
+<li>默认为空（不禁止任何命令）</li>
+<li>同时作用于 <code>/执行</code> 命令和 AI Agent 的 <code>run_command</code> 工具</li>
+</ul>
+<h2 id="_9">命令开关<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nt">commands</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">查信息</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">查管理</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">加管理</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="c1"># ... 其他命令</span>
+<span class="w">  </span><span class="nt">agent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>将对应命令设为 <code>false</code> 可禁用该命令。</p>
+<h2 id="_10">敏感词审核（可选）<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nt">audit</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">base-url</span><span class="p">:</span><span class="w"> </span><span class="s">""</span>
+<span class="w">  </span><span class="nt">api-key</span><span class="p">:</span><span class="w"> </span><span class="s">""</span>
+<span class="w">  </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="s">"gpt-4o-mini"</span>
+</code></pre></div>
+<p>配置后，消息会先经本地 <code>sensitive-words/*.txt</code> 过滤，命中后再调用 OpenAI 兼容接口二审。</p>
+<h2 id="webui">WebUI 管理面板<a class="headerlink" href="#webui" title="Permanent link">&para;</a></h2>
+<p>插件启动时会在控制台输出 WebUI 地址和密码。浏览器访问即可通过图形界面管理所有配置项，无需手动编辑 YAML 文件。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 HuoHuas001 | 桂ICP备2026016978号-1
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+      
+        <script src="../javascripts/config.js"></script>
+      
+    
+  </body>
+</html>
