@@ -32,10 +32,9 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install mkdocs-material
-      - name: Generate Plugin List
+      - name: Generate Pages
         run: |
           pip install -r "./docs/requirements.txt"
-          python ./docs/plugin_gen.py
           python ./docs/adapter_gen.py
           python ./docs/sponsor_gen.py
       - run: mkdocs gh-deploy --force
