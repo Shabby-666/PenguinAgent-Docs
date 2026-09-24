@@ -2,7 +2,7 @@ site_name: HuHoBotPenguin Docs
 site_author: 'HuoHuas001'
 site_description: 'HuHoBotPenguin 说明文档 - 基于 PenguinClient 的增强分支'
 site_url: 'https://huhobot.txssb.cn/'
-copyright: Copyright © 2026 HuoHuas001 | 桂ICP备2026016978号-1
+copyright: Copyright © 2026 HuoHuas001
 
 nav:
   - 主页: index.md
