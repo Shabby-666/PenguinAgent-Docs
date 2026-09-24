@@ -1,2 +1,2 @@
 # HuHoBot Docs
-[Docs Url](https://huhobot.dpdns.org)
+[Docs Url](https://doc.huhobot.dpdns.org)

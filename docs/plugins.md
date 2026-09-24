@@ -9,20 +9,15 @@ hide:
 
 本页包含一些可作为附属插件拓展 HuHoBotPenguin 功能的可用插件。
 
-<a href="https://addon.txssb.cn" class="md-button md-button--primary">HuHoBot 附属插件中心</a>
-
 ## 添加插件
 
-您可以在网站上添加自己的插件，只需打开一个新 Issues 即可。
+您可以在网站上添加自己的插件，注册插件中心账号即可。
 
 ## 可用插件列表
 
-<div class="grid cards" markdown>
+全部可用插件均已收录在附属插件中心，请前往下方站点浏览并下载。
 
-
-
-
-</div>
+<a href="https://addon.txssb.cn" class="md-button md-button--primary">前往附属插件中心下载</a>
 
 !!! note
 
