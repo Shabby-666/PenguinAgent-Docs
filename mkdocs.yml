@@ -46,9 +46,6 @@ theme:
 markdown_extensions:
   - toc:
       permalink: True
-      # 配合 hooks.py 的 keep_cjk：默认的 slugify 会把 CJK 剥成空串，
-      # 「## 自定义命令」这类标题的 id 变成 _1 / _2，指向它们的锚点链接全部失效。
-      slugify: !!python/name:hooks.keep_cjk
   - footnotes
   - tables
   - admonition  # 提示块
@@ -84,6 +81,11 @@ markdown_extensions:
 
 plugins:
   - search
+
+# hooks.py 在 on_config 阶段替换 toc 的 slugify，让中文标题的锚点 id 保留中文。
+# 路径相对本文件解析，因此不依赖构建时的当前工作目录。
+hooks:
+  - hooks.py
 
 repo_url: https://github.com/HuHoBot/PenguinAgent
 
