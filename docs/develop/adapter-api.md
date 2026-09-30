@@ -8,6 +8,8 @@ HuHoBotPenguin 为不同 Minecraft 服务端提供独立的附属插件 API。�
 - [Velocity](velocity.md)
 - [Allay](allay.md)
 
+本页是**编译型附属插件**（打 jar、用 `compileOnly` 依赖适配器）的接口。Spigot / Paper 还可以走**脚本扩展**——用 JS / Lua / Python 写脚本插件，不需要编译，见 [脚本扩展开发](script-addon.md)。
+
 ## 公共 API
 
 所有适配器都提供以下能力：

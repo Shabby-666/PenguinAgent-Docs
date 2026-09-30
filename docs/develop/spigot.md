@@ -416,3 +416,11 @@ class MyAddon : JavaPlugin(), Listener {
 3. **注册顺序**：必须先 `registerAddon` 再 `registerBotCommand(addonName, ...)`
 4. **命令上限**：QQ 指令面板最多显示 20 条命令，超出部分仅在 `/帮助` 中显示
 5. **旧 API 兼容**：不带 `addonName` 的 `registerBotCommand` 仍然可用，但新代码建议使用扩展 API
+
+## 相关页面
+
+本页介绍的是**编译型附属插件**（打 jar、`compileOnly` 依赖主插件 jar）。
+
+如果不想编译，Spigot / Paper 还支持用 **JavaScript / Lua / Python 写脚本插件**，
+放进 `plugins/HuHoBotPenguin/addons/<名字>/` 即可，同样能注册事件、游戏内命令、定时任务和 QQ 群指令。
+见 [脚本扩展开发](script-addon.md)。

@@ -137,6 +137,8 @@
 | `/huhobot info` | — | 查看适配器信息 | OP |
 | `/huhobot webui` | — | 查看 WebUI 地址和密码 | OP |
 | `/huhobot password` | `(新密码)` | 修改 WebUI 登录密码 | OP |
+| `/huhobot scripts reload` | — | 重载全部脚本插件 | OP |
+| `/huhobot scripts reload` | `(目录名)` | 重载 `addons/<目录名>/` 这一个脚本插件 | OP |
 
 ## 扩展系统
 
@@ -151,6 +153,18 @@ bot.registerBotCommand("MyAddon", "hello", "say Hello {params}", 0, true);
 ```
 
 详细文档请查看 [Spigot 附属插件开发](develop/spigot.md)。
+
+## 脚本插件
+
+不需要编译的脚本插件（JavaScript / Lua / Python）也可以注册命令，同样出现在 `/帮助` 和 QQ 面板里。
+用 `/huhobot scripts reload` 重载，Tab 补全会列出 `addons/` 下的目录名。
+
+| 命令 | 参数 | 说明 | 权限 |
+|---|---|---|---|
+| `/huhobot scripts reload` | — | 卸载全部再加载全部 | OP |
+| `/huhobot scripts reload` | `(目录名)` | 只重载指定目录，大小写不敏感 | OP |
+
+详细文档请查看 [脚本扩展开发](develop/script-addon.md) 与 [脚本语法指南](develop/script-addon-syntax.md)。
 
 ## 自定义命令
 

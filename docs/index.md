@@ -50,6 +50,16 @@
 - 表单编辑：文本、开关、标签列表、自定义命令编辑器
 - WebUI 端口可配置
 
+### 脚本扩展（Spigot / Paper）
+
+- **不用编译也能扩展**：用 JavaScript、Lua 或 Python 写脚本插件，放进 `plugins/HuHoBotPenguin/addons/<名字>/` 即可
+- **`Bird` 桥**：脚本可注册 Bukkit 事件、游戏内命令、定时任务、HTTP 回调和 QQ 群指令
+- **目录式插件**：一个目录一个插件，带 `metadata.yaml` 元数据、配置声明和数据目录
+- **可随时重载**：`/huhobot scripts reload` 撤销并重新加载，重载和加载失败都会清干净已登记的内容
+- **引擎按需安装**：Lua 随主插件附带；GraalJS（约 34 MB）和 GraalPy（约 125 MB）是独立 jar，放在 `plugins/HuHoBotPenguin/engines/`，不放也能启动
+
+详见 [脚本扩展开发](develop/script-addon.md)
+
 ### 其他增强
 
 - **动态 `/帮助`**：自动列出所有内置命令、自定义命令和扩展命令，按 command key 去重
@@ -87,6 +97,11 @@
 完整协议文本请查看 [LICENSE](LICENSE.txt) 文件
 
 ### 第三方资源
+
+脚本扩展系统（`addons/<名字>/main.js` / `main.lua` / `main.py` 与 `Bird` 桥）借鉴并移植自
+[birdlibraryapi](https://github.com/prach1121/birdlibraryapi)（Apache-2.0），原作者 prach1121。
+`Bird` 对象（`BirdScriptApi`）由该项目的 `BirdAPI` 移植而来，并按 Spigot 1.16+（不使用 Adventure API）
+与 HuHoBot 附属插件注册做了适配；脚本的加载与生命周期设计也参考了它。源码文件头部保留了原始出处与许可证声明。
 
 背包查看功能使用 [Faithful 32x](https://faithfulpack.net/) 贴图包，遵循 [Faithful License v3](https://faithfulpack.net/page/licenses)。
 
