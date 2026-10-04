@@ -1,0 +1,1477 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="HuHoBotPenguin 说明文档 - 基于 PenguinClient 的增强分支">
+      
+      
+        <meta name="author" content="HuoHuas001">
+      
+      
+        <link rel="canonical" href="https://docs.huhobot.dpdns.org/develop/script-addon/">
+      
+      
+        <link rel="prev" href="../allay/">
+      
+      
+        <link rel="next" href="../script-addon-syntax/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>概览 - HuHoBotPenguin Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#spigot-js-lua-python" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="HuHoBotPenguin Docs" class="md-header__button md-logo" aria-label="HuHoBotPenguin Docs" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HuHoBotPenguin Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              概览
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/HuHoBot/PenguinAgent" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    HuHoBotPenguin
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="HuHoBotPenguin Docs" class="md-nav__button md-logo" aria-label="HuHoBotPenguin Docs" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    HuHoBotPenguin Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/HuHoBot/PenguinAgent" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    HuHoBotPenguin
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../command/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    命令列表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../QuickStart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    快速开始
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Binding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    绑定系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OnlineList/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    在线列表配置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    适配器开发
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    适配器开发
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adapter-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    公共 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spigot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spigot/Paper
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nukkit-mot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nukkit-MOT (上游)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bungeecord/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BungeeCord (上游)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../velocity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Velocity (上游)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../allay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Allay (上游)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    脚本扩展开发 (Spigot)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    脚本扩展开发 (Spigot)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概览
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    概览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        准备引擎
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目录结构
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重载
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        注入的全局对象
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一个脚本
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        索引规则（重要）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常用 API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重载时卸掉什么
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        失败与禁用
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        已知边界
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相关页面
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../script-addon-syntax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    语法指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plugins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附属插件列表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sponsor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    赞助HuHoBot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        准备引擎
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目录结构
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重载
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        注入的全局对象
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一个脚本
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        索引规则（重要）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常用 API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重载时卸掉什么
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        失败与禁用
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        已知边界
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        相关页面
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="spigot-js-lua-python">Spigot 脚本扩展开发（JS / Lua / Python）<a class="headerlink" href="#spigot-js-lua-python" title="Permanent link">&para;</a></h1>
+<p>HuHoBotPenguin 允许用 JavaScript、Lua 或 Python 写脚本插件，无需编译 JAR。目前仅 Spigot / Paper 平台支持。</p>
+<p>本页讲<strong>怎么装、怎么组织、怎么重载</strong>。<strong>怎么写代码</strong>看 <a href="../script-addon-syntax/">脚本语法指南</a>。</p>
+<h2 id="_1">准备引擎<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>一个脚本插件是 <code>addons/</code> 下的<strong>一个目录</strong>，不是单个文件。根目录上直接放的 <code>.js</code> / <code>.lua</code> / <code>.py</code> <strong>不会被加载</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>入口</th>
+<th>引擎</th>
+<th>放在哪</th>
+<th>体积</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>main.lua</code></td>
+<td>LuaJ 3.0.1</td>
+<td>已在主插件 jar 内</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>main.js</code></td>
+<td>GraalJS 24.1.2</td>
+<td><code>plugins/HuHoBotPenguin/engines/HuHoBot-Engine-GraalJs-&lt;版本&gt;.jar</code></td>
+<td>约 34 MB</td>
+</tr>
+<tr>
+<td><code>main.py</code></td>
+<td>GraalPy 24.1.2（Python 3）</td>
+<td><code>plugins/HuHoBotPenguin/engines/HuHoBot-Engine-GraalPy-&lt;版本&gt;.jar</code></td>
+<td>约 125 MB</td>
+</tr>
+</tbody>
+</table>
+<p><code>engines/</code> 目录在插件启动时自动创建。<strong>不放引擎 jar 插件也能正常启动</strong>，只是对应语言的脚本加载失败，其余语言不受影响。</p>
+<p>引擎 jar 由主仓库构建，需与主插件同一次构建：</p>
+<div class="highlight"><pre><span></span><code>./gradlew<span class="w"> </span>:server-Spigot:shadowJar<span class="w"> </span>:addon-GraalJs:shadowJar<span class="w"> </span>:addon-GraalPy:shadowJar
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">引擎版本必须与主插件一致</p>
+<p>引擎 jar 的文件名带构建版本。放进 <code>engines/</code> 的 <code>HuHoBot-Engine-*.jar</code> 如果和当前插件版本对不上，启动时会写一条警告——这种组合下脚本多半会以难懂的方式失败，换成同一次构建产出的 jar 即可。</p>
+</div>
+<h2 id="_2">目录结构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>plugins/HuHoBotPenguin/
+├── addons/
+│   └── hello/
+│       ├── metadata.yaml          name / version / author / description / entry
+│       ├── _conf_schema.json      配置声明（可选）
+│       ├── requirements.txt       Python 依赖声明（可选，仅预检提示）
+│       └── main.js                或 main.lua / main.py
+├── config/
+│   └── hello.json                 实际配置值
+└── data/
+    └── hello/                     setData / kv 的落盘位置
+</code></pre></div>
+<p><code>metadata.yaml</code> 只解析顶层的 <code>key: value</code>，不引入 YAML 库：</p>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hello</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0.0</span>
+<span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">你的名字</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">一个打招呼的脚本</span>
+<span class="nt">entry</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main.js</span><span class="w">        </span><span class="c1"># 可省略，默认按 main.lua → main.py → main.js 找</span>
+</code></pre></div>
+<p><code>metadata.yaml</code> 里的 <code>name</code> 决定 addon 的登记名，也是重载时的键；<code>config</code> 和 <code>data</code> 的路径都由它派生。<code>name</code> 不能带路径分隔符。</p>
+<h2 id="_3">重载<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>/huhobot scripts reload            # 全部
+/huhobot scripts reload hello      # 单个，目录名大小写不敏感
+</code></pre></div>
+<p>权限 <code>huhobot.command</code>。Tab 补全会列出 <code>addons/</code> 下的目录名。</p>
+<h2 id="_4">注入的全局对象<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>三种语言注入同一组对象，行为一致：</p>
+<table>
+<thead>
+<tr>
+<th>名字</th>
+<th>是什么</th>
+<th>用来做什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Bird</code></td>
+<td><code>BirdScriptApi</code> 实例</td>
+<td>事件、命令、定时器、玩家、方块、HTTP、QQ 群命令。优先用它</td>
+</tr>
+<tr>
+<td><code>Bukkit</code></td>
+<td><code>org.bukkit.Bukkit</code> 这个<strong>类</strong></td>
+<td>JS 用 <code>Java.type</code> 不需要它；Lua 直接 <code>Bukkit.getOnlinePlayers()</code></td>
+</tr>
+<tr>
+<td><code>server</code></td>
+<td>当前 <code>org.bukkit.Server</code></td>
+<td>已经是对象，直接调用</td>
+</tr>
+<tr>
+<td><code>plugin</code></td>
+<td>插件实例</td>
+<td>一般不需要</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>配置表</td>
+<td><code>config.get("token")</code> / <code>config.getString</code> / <code>config.set</code></td>
+</tr>
+<tr>
+<td><code>kv</code></td>
+<td>键值存储</td>
+<td><code>kv.set</code> / <code>kv.get</code> / <code>kv.all</code></td>
+</tr>
+<tr>
+<td><code>DATA_DIR</code></td>
+<td>字符串</td>
+<td>该插件的 <code>data/</code> 绝对路径</td>
+</tr>
+</tbody>
+</table>
+<p>JS 和 Python 用点调用，Lua 用冒号调用（<code>Bird:onCommand(...)</code>）。点号调用会丢掉 <code>self</code> 导致参数错位。</p>
+<h2 id="_5">第一个脚本<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">JavaScript</label><label for="__tabbed_1_2">Lua</label><label for="__tabbed_1_3">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nx">Bird</span><span class="p">.</span><span class="nx">registerAddon</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">,</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w"> </span><span class="s2">"打招呼"</span><span class="p">,</span><span class="w"> </span><span class="s2">"你的名字"</span><span class="p">);</span>
+
+<span class="nx">Bird</span><span class="p">.</span><span class="nx">onEvent</span><span class="p">(</span><span class="s2">"org.bukkit.event.player.PlayerJoinEvent"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">getPlayer</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">Bird</span><span class="p">.</span><span class="nx">tell</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span><span class="w"> </span><span class="s2">"&amp;a欢迎 &amp;f"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">player</span><span class="p">.</span><span class="nx">getName</span><span class="p">());</span>
+<span class="w">    </span><span class="nx">Bird</span><span class="p">.</span><span class="nx">playSound</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span><span class="w"> </span><span class="s2">"ENTITY_PLAYER_LEVELUP"</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">1.2</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">Bird</span><span class="p">.</span><span class="nx">onCommand</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">,</span><span class="w"> </span><span class="s2">"huhobot.command"</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">sender</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="p">,</span><span class="w"> </span><span class="nx">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Bird</span><span class="p">.</span><span class="nx">tell</span><span class="p">(</span><span class="nx">sender</span><span class="p">,</span><span class="w"> </span><span class="s2">"&amp;7在线 &amp;f"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">Bird</span><span class="p">.</span><span class="nx">getOnlineCount</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">" &amp;7人"</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="p">},</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">sender</span><span class="p">,</span><span class="w"> </span><span class="nx">alias</span><span class="p">,</span><span class="w"> </span><span class="nx">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">[</span><span class="s2">"give"</span><span class="p">,</span><span class="w"> </span><span class="s2">"time"</span><span class="p">];</span>
+<span class="p">});</span>
+
+<span class="nx">Bird</span><span class="p">.</span><span class="nx">runTaskTimer</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Bird</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">(</span><span class="s2">"&amp;7当前在线 &amp;f"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">Bird</span><span class="p">.</span><span class="nx">getOnlineCount</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">" &amp;7人"</span><span class="p">);</span>
+<span class="p">},</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">60</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nv">Bird</span><span class="p">:</span><span class="nf">registerAddon</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">,</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w"> </span><span class="s2">"打招呼"</span><span class="p">,</span><span class="w"> </span><span class="s2">"你的名字"</span><span class="p">)</span>
+
+<span class="nv">Bird</span><span class="p">:</span><span class="nf">onEvent</span><span class="p">(</span><span class="s2">"org.bukkit.event.player.PlayerJoinEvent"</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">event</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">event</span><span class="p">:</span><span class="nf">getPlayer</span><span class="p">()</span>
+<span class="w">    </span><span class="nv">Bird</span><span class="p">:</span><span class="nf">tell</span><span class="p">(</span><span class="nv">player</span><span class="p">,</span><span class="w"> </span><span class="s2">"&amp;a欢迎 &amp;f"</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getName</span><span class="p">())</span>
+<span class="w">    </span><span class="nv">Bird</span><span class="p">:</span><span class="nf">playSound</span><span class="p">(</span><span class="nv">player</span><span class="p">,</span><span class="w"> </span><span class="s2">"ENTITY_PLAYER_LEVELUP"</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">1.2</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+
+<span class="nv">Bird</span><span class="p">:</span><span class="nf">onCommand</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">,</span><span class="w"> </span><span class="s2">"huhobot.command"</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">sender</span><span class="p">,</span><span class="w"> </span><span class="nv">label</span><span class="p">,</span><span class="w"> </span><span class="nv">args</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">-- 注意：参数下标从 1 开始</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">sub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">args</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="o">#</span><span class="nv">args</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nb">tostring</span><span class="p">(</span><span class="nv">args</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">"info"</span>
+<span class="w">    </span><span class="nv">Bird</span><span class="p">:</span><span class="nf">tell</span><span class="p">(</span><span class="nv">sender</span><span class="p">,</span><span class="w"> </span><span class="s2">"&amp;7在线 &amp;f"</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">Bird</span><span class="p">:</span><span class="nf">getOnlineCount</span><span class="p">()</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">" &amp;7人"</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="kc">true</span>
+<span class="kr">end</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">sender</span><span class="p">,</span><span class="w"> </span><span class="nv">alias</span><span class="p">,</span><span class="w"> </span><span class="nv">args</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="p">{</span><span class="s2">"give"</span><span class="p">,</span><span class="w"> </span><span class="s2">"time"</span><span class="p">}</span>
+<span class="kr">end</span><span class="p">)</span>
+
+<span class="nv">Bird</span><span class="p">:</span><span class="nf">runTaskTimer</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
+<span class="w">    </span><span class="nv">Bird</span><span class="p">:</span><span class="nf">broadcast</span><span class="p">(</span><span class="s2">"&amp;7当前在线 &amp;f"</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">Bird</span><span class="p">:</span><span class="nf">getOnlineCount</span><span class="p">()</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">" &amp;7人"</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">Bird</span><span class="o">.</span><span class="n">registerAddon</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">,</span> <span class="s2">"1.0.0"</span><span class="p">,</span> <span class="s2">"打招呼"</span><span class="p">,</span> <span class="s2">"你的名字"</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">on_join</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="n">player</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">getPlayer</span><span class="p">()</span>
+    <span class="n">Bird</span><span class="o">.</span><span class="n">tell</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="s2">"&amp;a欢迎 "</span> <span class="o">+</span> <span class="n">player</span><span class="o">.</span><span class="n">getName</span><span class="p">())</span>
+    <span class="n">Bird</span><span class="o">.</span><span class="n">playSound</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="s2">"ENTITY_PLAYER_LEVELUP"</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)</span>
+
+<span class="n">Bird</span><span class="o">.</span><span class="n">onEvent</span><span class="p">(</span><span class="s2">"org.bukkit.event.player.PlayerJoinEvent"</span><span class="p">,</span> <span class="n">on_join</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">on_hello</span><span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+    <span class="n">Bird</span><span class="o">.</span><span class="n">tell</span><span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="s2">"&amp;7在线 "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">Bird</span><span class="o">.</span><span class="n">getOnlineCount</span><span class="p">())</span> <span class="o">+</span> <span class="s2">" 人"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">complete_hello</span><span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">alias</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="s2">"give"</span><span class="p">,</span> <span class="s2">"time"</span><span class="p">]</span>
+
+<span class="n">Bird</span><span class="o">.</span><span class="n">onCommand</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">,</span> <span class="s2">"huhobot.command"</span><span class="p">,</span> <span class="n">on_hello</span><span class="p">,</span> <span class="n">complete_hello</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">announce</span><span class="p">():</span>
+    <span class="n">Bird</span><span class="o">.</span><span class="n">broadcast</span><span class="p">(</span><span class="s2">"&amp;7当前在线 "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">Bird</span><span class="o">.</span><span class="n">getOnlineCount</span><span class="p">())</span> <span class="o">+</span> <span class="s2">" 人"</span><span class="p">)</span>
+
+<span class="n">Bird</span><span class="o">.</span><span class="n">runTaskTimer</span><span class="p">(</span><span class="n">announce</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="_6">索引规则（重要）<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p><code>Bird</code> 返回的 <code>List</code> / <code>Map</code> 和命令参数，在三种语言里形态不同：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>命令参数下标</th>
+<th>列表</th>
+<th>字典</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JavaScript</td>
+<td><code>args[0]</code></td>
+<td><code>.length</code>、<code>arr[0]</code></td>
+<td><code>obj.key</code></td>
+</tr>
+<tr>
+<td>Lua</td>
+<td><code>args[1]</code></td>
+<td><code>#t</code>、<code>t[1]</code>、<code>ipairs(t)</code></td>
+<td><code>t.key</code>、<code>pairs(t)</code></td>
+</tr>
+<tr>
+<td>Python</td>
+<td><code>args[0]</code></td>
+<td><code>len(x)</code>、<code>for v in x</code></td>
+<td><code>x["key"]</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Lua 侧是 1 起</p>
+<p>LuaJ 会把 Java 的 <code>List</code> 和 <code>Map</code> 变成 userdata，在 Lua 里既不能取长度也不能 <code>pairs</code>。
+插件的 Lua 绑定层会把容器返回值转成真正的 Lua table，所以是标准的 1 起序列。
+写 0 起下标会拿到 <code>nil</code>。</p>
+</div>
+<h2 id="api">常用 API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>Bird.registerAddon(name, version, description, author)
+Bird.registerBotCommand(addonName, 群里的指令, 模板, {permission}, {pushMenu})
+
+Bird.onEvent(类全名, 回调)                 优先级用三参重载
+Bird.onCommand(名字[, 权限], 回调[, Tab补全回调])
+Bird.runTask / runTaskLater / runTaskTimer / runTaskAsync / runTaskTimerAsync
+Bird.cancelTask(任务号)
+
+Bird.getData(key[, 默认值]) / setData(key, value) / getDataKeys()
+Bird.fetch(url[, method[, body[, headers]]], 回调)      异步，回调在主线程
+Bird.emit(事件名, 数据) / on(事件名, 回调)                跨脚本事件总线
+
+Bird.tell(发送者, 消息)                     玩家 / 任意 CommandSender / 玩家名
+Bird.broadcast(消息) / sendActionBar(玩家, 消息) / playSound(玩家, 音效, 音量, 音调)
+Bird.getPlayer(名字) / getOnlineCount() / getMaxPlayers() / getWorldNames()
+Bird.giveItem(玩家, 材质, 数量[, 显示名[, lore]])      背包满时溢出掉落
+</code></pre></div>
+<p>完整的 API 列表见主仓库的 <a href="https://github.com/HuHoBot/PenguinAgent/blob/master/docs/spigot-script-addons.md"><code>docs/spigot-script-addons.md</code></a>。</p>
+<h2 id="_7">重载时卸掉什么<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>/huhobot scripts reload hello
+</code></pre></div>
+<p>对这一份 <code>Bird</code> 做：</p>
+<ol>
+<li>反注册它登记过的 Bukkit 事件。</li>
+<li>从命令表摘掉 <code>onCommand</code> 注册的动态命令。</li>
+<li>取消它创建的全部定时任务。</li>
+<li>删掉它登记的 QQ 群命令。</li>
+<li><code>unregisterAddon</code>，再重新加载这个目录。</li>
+</ol>
+<p>加载失败时走同一套撤销步骤，所以半路抛错的脚本不会把已登记的东西留在服务器上。</p>
+<h2 id="_8">失败与禁用<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>情况</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>入口编译或执行失败</td>
+<td>控制台一条 <code>[名字] ... error</code>，该脚本登记的内容全部撤销，其它目录继续加载</td>
+</tr>
+<tr>
+<td>两个目录的 <code>name</code> 相同</td>
+<td>后一个被跳过，日志写「插件名已被另一个目录使用」</td>
+</tr>
+<tr>
+<td><code>config/hello.json</code> 里 <code>"_enabled": false</code></td>
+<td>不加载，记为「跳过」而不是「失败」</td>
+</tr>
+<tr>
+<td>缺引擎 jar</td>
+<td>该语言的脚本报「未安装脚本引擎」，其它语言不受影响</td>
+</tr>
+<tr>
+<td>脚本回调抛错</td>
+<td><code>Bird</code> 捕获后写警告，不会把服务器打崩</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_9">已知边界<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>Bird.fetch</code> 走 JVM 的默认信任库。目标站点的证书链不在信任库里时会失败（例如本机装了流量代理时 GitHub 会被拦截）。需要访问这类站点时，把对应根证书导入服务端 JVM 的 <code>cacerts</code>。</li>
+<li>Python 的 <code>requirements.txt</code> 只做 <code>import</code> 预检并打警告，<strong>不会自动安装</strong>任何第三方库。</li>
+<li>主插件是 Java 8 字节码，可以跑在 1.16.5 及以上的 Spigot / Paper 上；两个引擎包由 Java 17 构建，但它们只是被加载的库，不影响服务端自身的 Java 要求。</li>
+<li><code>fetch</code> 回调在主线程执行，回调里不要做长时间阻塞操作。</li>
+</ul>
+<h2 id="_10">相关页面<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../script-addon-syntax/">脚本语法指南</a> —— 三种语言的写法、类型映射、回调、常见报错</li>
+<li><a href="../adapter-api/">适配器开发</a></li>
+<li><a href="../spigot/">Spigot/Paper 附属插件开发</a></li>
+<li><a href="../../command/">指令列表</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 HuoHuas001
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+    
+  </body>
+</html>
