@@ -1,0 +1,43 @@
+# 这是切换到 VitePress 之前的 MkDocs 工作流，仅作留存参考。
+# 文件名不以 .yml / .yaml 结尾，GitHub Actions 不会执行它。
+# 现行工作流见同目录下的 docs.yml（VitePress → GitHub Pages）。
+name: docs
+on:
+  push:
+    branches:
+      - master 
+      - main
+  pull_request:
+    branches:
+      - master 
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+      - uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+      - run: pip install mkdocs-material
+      - name: Generate Pages
+        run: |
+          pip install -r "./docs/requirements.txt"
+          python ./docs/adapter_gen.py
+          python ./docs/sponsor_gen.py
+      - run: mkdocs gh-deploy --force

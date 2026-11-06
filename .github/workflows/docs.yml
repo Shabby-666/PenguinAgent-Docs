@@ -1,40 +1,90 @@
 name: docs
+
 on:
   push:
     branches:
-      - master 
       - main
+      - master
+    paths:
+      - '**/*.md'
+      - '.vuepress/**'
+      - 'scripts/**'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - '.npmrc'
+      - '.github/workflows/docs.yml'
   pull_request:
     branches:
-      - master 
       - main
+      - master
+  workflow_dispatch:
 
+# 发布到 GitHub Pages 需要 pages: write 与 id-token: write
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+# 同一分支只跑一个任务；PR 的新提交会取消上一次未跑完的校验
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-      - name: Configure Git Credentials
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-      - uses: actions/setup-python@v5
         with:
-          python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-      - uses: actions/cache@v4
+          # lastUpdated 依赖完整的 git 历史
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
         with:
-          key: mkdocs-material-${{ env.cache_id }}
-          path: .cache
-          restore-keys: |
-            mkdocs-material-
-      - run: pip install mkdocs-material
-      - name: Generate Pages
+          version: 10.33.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # docs:build 会先跑 scripts/gen-*.mjs 生成 Sponsor.md 与 develop/third-party.md
+      - name: Build site
+        run: pnpm docs:build
+
+      # 产物缺失时早点失败，别把空目录发到 Pages 上
+      - name: Verify build output
         run: |
-          pip install -r "./docs/requirements.txt"
-          python ./docs/adapter_gen.py
-          python ./docs/sponsor_gen.py
-      - run: mkdocs gh-deploy --force
+          set -euo pipefail
+          test -f .vuepress/dist/index.html
+          test -f .vuepress/dist/404.html
+          test -f .vuepress/dist/CNAME
+          test -f .vuepress/dist/sitemap.xml
+          echo "HTML 页面数：$(find .vuepress/dist -name '*.html' | wc -l)"
+          echo "产物大小：$(du -sh .vuepress/dist | cut -f1)"
+
+      # PR 只做构建校验，不配置也不上传 Pages 产物
+      - uses: actions/configure-pages@v5
+        if: github.event_name != 'pull_request'
+
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
+        with:
+          path: .vuepress/dist
+
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
