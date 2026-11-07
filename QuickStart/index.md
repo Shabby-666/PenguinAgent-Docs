@@ -203,36 +203,42 @@ agent:
 
 详细文档请查看 [AI Agent](../Agent/index.md)。
 
-## MOTD API 与在线查询配置
+## MOTD 与在线查询配置
 
-### MOTD API 启用配置
+### `/motd` 命令
 
-若要启用服务器状态及 MOTD 展示，需要在配置中定位到 `motd` 字段下的 `api` 项，并将其值换为标准 API 接口：
+`/motd <服务器地址[:端口]>` 直接使用 [motd.txssb.cn](https://motd.txssb.cn) 的状态与图片接口，返回服务器状态图片和 Markdown 卡片。
+
+- 未写端口时由服务端自动解析 SRV 记录（`stype=auto`）
+- 指定端口示例：`/motd mc.hypixel.net:25565`
+
+该命令不再依赖 `config.yml` 中的 `motd.api`。
+
+### `/查在线`（Spigot / Paper 默认本地渲染）
+
+Spigot/Paper 端 `/查在线 [页码]` 默认发送本地渲染的在线列表图片（雾蓝玻璃主题、玩家皮肤头像、管理员置顶、分页），由 `online-list.*` 配置控制：
 
 ```yaml
-motd:
-  server-ip: "127.0.0.1"
-  server-port: 25565
-  api: "http://motd.txssb.cn/api/app_img?ip={ip}&port={port}&dark=true&lang=zh-CN"
-  text: "共{online}人在线"
-  post-img: true
-  use-markdown: true
+online-list:
+  enabled: true
+  page-size: 27
+  admin-first: true
+  cooldown-seconds: 3
+  skin:
+    enabled: true
 ```
 
-**参数与规则说明：**
+关闭 `online-list.enabled`、渲染失败或非 Spigot 平台时，会回退到 `motd` + `markdown` 的图片/Markdown 逻辑。
 
-- **保留占位符**：URL 中的 `{ip}` 和 `{port}` 必须保持原样，**不可变动**。
-- **主题配色调节：**
-  - `dark`：深色模式
-  - `dark=false`：浅色
+### 回退模式（MOTD/Markdown）
 
-**详细文档与调试**：参考[官方文档](https://motd.txssb.cn/docs)，或使用其提供的在线测试器测试对应的 URL。
+回退模式下可配置 `motd.api`（`/查在线` 图片接口，支持 `{ip}`、`{port}`）、`motd.post-img`、`motd.use-markdown` 与 `markdown.queryOnline`（默认 `Markdown/online.md`）。详见[在线列表配置](../OnlineList.md)。
 
-- **兼容性限制：** 暂不支持 **Simpfun (简幻欢)** 节点的状态查询。
+::: tip
 
-### 在线查询 Markdown 权限说明
+旧版自定义 `motd.api` 仍可用于 `/查在线` 回退图片；如需调试 motd.txssb.cn 接口参数，可参考[官方文档](https://motd.txssb.cn/docs)。
 
-使用 `/查在线` 时，`use-markdown` 与 `post-img` 默认为 `true`（Markdown 卡片 + 服务器状态图）。如需纯文本可把 `use-markdown` 设为 `false`，不想要图片可把 `post-img` 设为 `false`。自定义卡片的模板文件由 `markdown.queryOnline` 指定（默认 `Markdown/online.md`），详见[在线列表配置](../OnlineList.md)。
+:::
 
 ## 管理员配置
 
